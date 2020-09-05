@@ -1,4 +1,18 @@
-
+swal({
+  title: "An input!",
+  text: "Write something interesting:",
+  type: "input",
+  showCancelButton: true,
+  closeOnConfirm: false,
+  inputPlaceholder: "Write something"
+}, function (inputValue) {
+  if (inputValue === false) return false;
+  if (inputValue === "") {
+    swal.showInputError("You need to write something!");
+    return false
+  }
+  swal("Nice!", "You wrote: " + inputValue, "success");
+});
   var UpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var LowerCase = "abcdefghijklmnopqrstuvwxyz";
   var numbers = Array.from(Array(10).keys());
